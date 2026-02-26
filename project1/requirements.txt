@@ -1,0 +1,5 @@
+Django==6.3.3
+gunicorn==22.2.3
+pytz==2026.2
+sqlparse==1.0.6
+asgiref==3.8.2
