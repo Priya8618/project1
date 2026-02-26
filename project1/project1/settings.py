@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yycy@aelzi)am5kd=$-3o6!6fm60nk4w77s9+7f$scdef3+rdl'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = ['yourdomain.com', 'yourusername.pythonanywhere.com']  
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",") 
 # Replace with your actual domain or hosting URL
 
 
@@ -121,3 +121,4 @@ import os
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
